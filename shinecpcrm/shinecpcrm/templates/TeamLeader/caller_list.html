@@ -1,0 +1,101 @@
+{%extends "TeamLeader/base.html" %}
+{% load staticfiles %}
+{%block title%}Caller List{%endblock title%}
+{%block mainbody%}
+
+<div class="container"> 
+	<div class="row">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-4 lead_inner_col"> 
+    <h4>Caller List</h4>
+    </div>
+    </div>
+</div> 
+
+<div class="container-fluid"> 
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col_ctr">
+      <nav class="text-center">
+           <ul class="pagination">
+            <li>
+                {% if page.has_previous %}
+                    <a href="?page={{page.previous_page_number}}" aria-label="Previous"> 
+                    <span aria-hidden="true">Prev</span>
+                  </a>
+                {% endif %}
+            </li>
+            {% for p in paginator.page_range %}
+                
+                    <li><a href="?page={{p}}">{{p}}</a></li>
+                
+            {% endfor %}
+            
+            <li>
+                {% if page.has_next %}
+                    <a href="?page={{page.next_page_number}}" aria-label="Next">
+                    <span aria-hidden="true">Next</span>
+                    </a>
+                {% endif %}
+            </li>
+          </ul>
+    </nav>
+    </div>
+           
+</div> <!--container fluid end here-->
+
+<div class="container"> 
+	<div class="table-responsive lead_table">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Email ID</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+       
+        <tbody>
+          <tr>
+          {%for ob in caller%}
+            <td>{{ob.empid}}</td>
+            <td>{{ob.username}}</td>
+            <td>{{ob.email}}</td>
+            <td>{{ob.is_active}}</td>
+          </tr>
+          {%endfor%}
+      
+        </tbody>
+      </table>
+    </div>
+	
+</div>
+
+<div class="container-fluid"> 
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col_ctr">
+      <nav class="text-center">
+          <ul class="pagination">
+            <li>
+                {% if page.has_previous %}
+                    <a href="?page={{page.previous_page_number}}" aria-label="Previous"> 
+                    <span aria-hidden="true">Prev</span>
+                    </a>
+                {% endif %}
+            </li>
+            {% for p in paginator.page_range %}
+                
+                    <li><a href="?page={{p}}">{{p}}</a></li>
+                
+            {% endfor %}
+            
+            <li>
+                {% if page.has_next %}
+                  <a href="?page={{page.next_page_number}}" aria-label="Next">
+                  <span aria-hidden="true">Next</span>
+                  </a>
+              {% endif %}
+            </li>
+          </ul>
+    </nav>
+    </div>
+           
+</div> <!--container fluid end here-->
+{%endblock mainbody%}

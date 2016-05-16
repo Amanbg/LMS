@@ -1,0 +1,99 @@
+@charset "utf-8"
+/* CSS Document */
+body{font-size:12px;}
+.no_pad{padding-left:0px; padding-right:0px;}
+.col_ctr{margin:0px auto !important; float:none !important;}
+.padt_30{padding-top:30px;}
+.padb_30{padding-bottom:30px;}
+.padtb_30{padding:30px 0px;}
+.btn_submit{background:#0aa89e; color:#fff; font-size:14px; text-transform:uppercase;}
+h4{font-weight:normal;}
+
+header{background:url(../images/login_bg.jpg) no-repeat center center; display:block; background-size:cover; min-height:188px; position:relative;}
+.logo{background-position:-8px -8px; width:80px; height:65px; display:block; position:absolute; bottom:0px; left:60px;}
+.logo_inner{background-position:-102px -23px; width:62px; height:50px; display:block; margin:7px 40px 0px 0px;}
+.sprite_call{background-image:url(../images/sprite_call.png);}
+.input-group{width:100% !important;}
+.login-input{background:transparent; color:#8b8d98l; border-bottom:1px solid #cacbcb !important; margin-bottom:30px !important; font-size:13px; padding:10px 15px 10px 0px; display:block; box-shadow:none !important; border-right:0!important; border-left:0!important; border-top:0!important;}
+.span2{background:none !important; border:none; display:block; width:100%; color:#999; border-bottom:1px solid #cacbcb !important; margin-bottom:30px !important; font-size:13px; padding:15px 15px 15px 0px; display:block; box-shadow:none !important; border-right:0!important; border-left:0!important; border-top:0!important;}
+.span2 textarea:hover, input:hover, textarea:active, input:active, textarea:focus, input:focus, button:focus, button:active, button:hover
+{outline:0px !important; -webkit-appearance:none;}
+
+
+.sel_custom{padding:0px !important; color:#999;}
+.footer{position:absolute; width:100%; bottom:0; font-size:12px; text-align:center; border-top:1px solid #b8babf; color:#8b8d98;}
+.footer_inner{margin-top:50px; font-size:12px; text-align:center; border-top:1px solid #b8babf; color:#8b8d98;}
+.navbar-brand{margin-left:0px !important;}
+.navbar-nav>li>a{padding-top:10px !important; padding-bottom:10px !important; line-height:42px;}
+.navbar-form .form-control{min-width:275px;}
+.navbar-left{position:relative !important;}
+.nav_search_input{background:#fff; color:#a3a3a3; border:none!important; margin:8px 0px 0px 0px !important; font-size:13px; padding:10px 15px 10px 10px !important; display:block; box-shadow:none !important;}
+
+.btn_search{background-position:-171px -56px; width:19px; height:17px; display:block; margin:-25px 0px 0px; right:17px; position:absolute;}
+
+
+/*login inner style*/
+.login_inner_box{min-height:130px; display:block; margin-bottom:30px; padding:0px; position:relative;}
+.login_inner_box h2{font-size:30px; font-weight:600; padding:20px 20px 10px 20px; color:#fff; margin:0px; line-height:35px;}
+.login_inner_box h4{font-size:18px; font-weight:600; padding:20px 20px 10px 20px; color:#fff; margin:0px; line-height:35px;}
+.bg_red{background:#f56954;}
+.bg_lt_blue{background:#00c0ef;}
+.bg_dark_yellow{background:#f39c12;}
+.bg_green{background:#00a65a;}
+.bg_chocolate{background:#785447;}
+.bg_velvet{background:#5f7c8a;}
+.bg_blue{background:#3e50b4;}
+.bg_dark_grey{background:#363f45;}
+.login_inner_box p{padding:0px 0px 0px 20px; color:#fff; margin:0px;}
+.icon_tdy_lead{background-position:-198px -37px; width:56px; height:36px; position:absolute; bottom:50px; right:20px;}
+.icon_pdy_lead{background-position:-265px -19px; width:38px; height:54px; position:absolute; bottom:50px; right:20px;}
+.icon_flw_lead{background-position:-313px -37px; width:41px; height:36px; position:absolute; bottom:50px; right:20px;}
+.icon_dec_lead{background-position:-364px -44px; width:44px; height:30px; position:absolute; bottom:50px; right:20px;}
+.icon_denied{background-position:-419px -32px; width:41px; height:41px; position:absolute; bottom:50px; right:20px;}
+.icon_add_lead{background-position:-473px -34px; width:48px; height:38px; position:absolute; bottom:50px; right:20px;}
+.icon_dash_lead{background-position:-531px -38px; width:39px; height:35px; position:absolute; bottom:50px; right:20px;}
+.icon_report{background-position:-588px -27px; width:47px; height:48px; position:absolute; bottom:50px; right:20px;}
+.box_lead_ftr{position:absolute; bottom:0px; background:rgba(43,43,43,0.4); display:block; padding:5px; width:100%; text-align:center; color:#fff;}
+.box_lead_ftr a{text-decoration:none; color:#fff;}
+.icon_rotate{-ms-transform: rotate(-90deg); -webkit-transform: rotate(-90deg); transform: rotate(-90deg); line-height:25px;}
+
+
+
+/*lead style*/
+.lead_inner_col{display:block; position:relative;}
+.lead_inner_col h4{font-size:18px; font-weight:600;}
+.lead_inner_col h4 span{font-size:14px; font-weight:normal;}
+.pag_col{display:block;}
+.pag_col nav{text-align:right;}
+.pag_col .pagination{margin:0px 0px;}
+.lead_table{display:block; overflow:auto; border:0px solid #f00; margin-top:15px;}
+.lead_table th{font-size:13px; font-weight:600; border:1px solid #f00 !important; background:#fbc3bb; text-transform:uppercase;}
+.lead_table td{background:#fff;}
+.lead_table .light_red{background:#f00;}
+
+/*reset password*/
+.input-group-addon{padding:0px !important; background:none; border:none; height:15px !important;}
+span.add-on.input-group-addon{vertical-align:top; height:20px !important; float:right; margin-top:-63px;}
+.table_rt_bor{text-align:right; padding-right:15px; width:50%}
+.table_lt_pad{padding-left:15px;}
+
+.dashboard_table .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{border-top:none; border-left:1px solid #acacac; border-right:1px solid #acacac; border-bottom:none;}
+
+
+
+@media (min-width: 768px) and (max-width:991px){
+.logo_inner{margin-right:10px;}
+.navbar-nav>li{margin-right:0px;}
+.navbar-form .form-control{min-width:200px;}
+.navbar-form{padding:0px 0px;}
+	}
+	
+@media (max-width: 768px) {
+.navbar-nav>li>a{line-height:25px;}
+.navbar-nav .open .dropdown-menu{background-color:#fff;}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a{color:#333843;}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{color:#333843; text-decoration:underline;}
+.navbar-form{margin-right:0; margin-left:0;}
+	}
+
+

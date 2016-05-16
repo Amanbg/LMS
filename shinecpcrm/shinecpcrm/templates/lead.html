@@ -1,0 +1,146 @@
+{%load staticfiles%}
+
+{%if teamlead%}
+    
+    {% include "TeamLeader/navbar.html"%}
+
+{% else %}
+
+    {% include "caller/navbar.html"%}
+
+{%endif%}
+
+{%block mainbody%}
+
+<div class="container-fluid"> 
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col_ctr">
+       <nav class="text-center">
+        <ul class= "pagination">            
+            <li>
+                {% if page.has_previous %}
+                    <a href="?page={{page.previous_page_number}}" aria-label="Previous"> 
+                    <span aria-hidden="true">Prev</span>
+                    </a>
+               {% endif %}
+            </li>
+                {% for p in paginator.page_range %}
+                    <li><a href="?page={{p}}">{{p}}</a></li>
+                {% endfor %}
+            <li>
+                {% if page.has_next %}
+                    <a href="?page={{page.next_page_number}}" aria-label="Next">
+                    <span aria-hidden="true">Next</span>
+                    </a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+</div>
+    <div class="head-lead">
+    <p><b>Total Leads : {{lead}}</b></p>
+    </div>
+	<div class="table-responsive lead_table">
+
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>EmailID</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>City</th>
+            <th>Exp.Years</th>
+            <th>Exp.Level</th>
+            <th>Salary</th>
+            <th>Industry</th>
+            <th>Source</th>
+            <th>Product</th>
+            <th>Assign</th>
+            <th>Follow up time</th>
+            </tr>
+        </thead>
+       <tbody>
+        {%if not searchdata%}
+         <tr>        
+            {%for ob in leadobj%}
+            <td><a href="{%url 'Get-Lead-Details' ob.id %}">{{ob.username}}</a></td>
+            <td>{{ob.email_id}}</td>
+            <td>{{ob.name}}</td>
+            <td>{{ob.contact}}</td>
+            <td>{{ob.city}}</td>
+            <td>{{ob.experience_years}}</td>
+            <td>{{ob.experience_level}}</td>
+            <td>{{ob.salary}}</td>
+            <td>{{ob.industry}}</td>
+            <td>{{ob.source.source_name}}</td>
+            <td>{{ob.product_name}}</td>
+            <td>{{ob.assign_date}}</td>
+            <td>{{ob.followup_time}}</td>
+
+         </tr>
+         {%endfor%}
+
+        {% else %}
+            <tr>        
+            
+            <td><a href="{%url 'Get-Lead-Details' searchdata.id %}">{{searchdata.username}}</a></td>
+            <td>{{searchdata.email_id}}</td>
+            <td>{{searchdata.name}}</td>
+            <td>{{searchdata.contact}}</td>
+            <td>{{searchdata.city}}</td>
+            <td>{{searchdata.experience_years}}</td>
+            <td>{{searchdata.experience_level}}</td>
+            <td>{{searchdata.salary}}</td>
+            <td>{{searchdata.industry}}</td>
+            <td>{{searchdata.source.source_name}}</td>
+            <td>{{searchdata.product_name}}</td>
+            <td>{{searchdata.assign_date}}</td>
+            <td>{{searchdata.followup_time}}</td>
+
+         </tr>
+        {% endif %}           
+       </tbody>
+       
+      </table>
+    </div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col_ctr">
+       <nav class="text-center">
+       <ul class= "pagination">
+            <li>
+                {% if page.has_previous %}
+                    <a href="?page={{page.previous_page_number}}" aria-label="Previous">
+                    <span aria-hidden="true">Prev</span>
+                    </a>
+                {% endif %}           
+            </li>
+                {% for p in paginator.page_range %}    
+                    <li><a href="?page={{p}}">{{p}}</a></li>
+                {% endfor %}
+            
+            <li>
+                {% if page.has_next %}
+                    <a href="?page={{page.next_page_number}}" aria-label="Next">
+                    <span aria-hidden="true">Next</span>
+                    </a>
+                {% endif %}
+            </li>
+        </nav>
+    </div>
+</div>
+{%endblock mainbody%}
+
+{%block footer%}
+
+<footer class="padtb_30 footer_inner">
+  <div class="container" >
+    <p>© 2015 Careerplus.shine.com All Rights Reserved.</p>
+  </div>
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    
+    {%endblock footer%}

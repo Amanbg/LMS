@@ -1,0 +1,31 @@
+{%load staticfiles%}
+
+{% if teamlead%}
+  
+  {%include "TeamLeader/navbar.html"%}
+  {%include "TeamLeader/homedashboard.html"%}
+
+{% else %}
+
+  {%include "caller/navbar.html"%}
+  {%include "caller/homedashboard.html"%}
+
+
+{%endif%}
+
+{%block footer%}
+<footer class="padtb_30 footer_inner">
+  <div class="container" >
+    <p>© 2015 Careerplus.shine.com All Rights Reserved.</p>
+  </div>
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
+{%endblock footer%}
+
+

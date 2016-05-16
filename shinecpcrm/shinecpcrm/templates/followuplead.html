@@ -1,0 +1,116 @@
+{%load staticfiles%}
+{% if teamlead %}
+  {%include "TeamLeader/navbar.html"%}
+{% else %}
+  {%include "caller/navbar.html"%}
+{% endif %}
+
+{% block mainbody %}
+
+<div class="container-fluid"> 
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col_ctr">
+       <nav class="text-center">
+        <ul class= "pagination">            
+            <li>
+                {% if page.has_previous %}
+                    <a href="?page={{page.previous_page_number}}" aria-label="Previous"> 
+                    <span aria-hidden="true">Prev</span>
+                    </a>
+               {% endif %}
+            </li>
+                {% for p in paginator.page_range %}
+                    <li><a href="?page={{p}}">{{p}}</a></li>
+                {% endfor %}
+            <li>
+                {% if page.has_next %}
+                    <a href="?page={{page.next_page_number}}" aria-label="Next">
+                    <span aria-hidden="true">Next</span>
+                    </a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+</div>
+  <div class = "head-lead">
+    <p><b>Total followup Leads : {{followuplead}}</b></p>
+  </div>
+	<div class="table-responsive lead_table">
+    
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>City</th>
+            <th>Exp.Years</th>
+            <th>Salary</th>
+            <th>Industry</th>
+            <th>Product</th>
+            <th>Source</th>
+            <th>Assign</th>
+            <th>Follow up time</th>
+          </tr>
+        </thead>
+       
+       
+        <tbody>
+          <tr>
+            {% for ob in commobjct %}
+            <td>{{ob.lead.username}}</td>
+            <td>{{ob.lead.name}}</td>
+            <td>{{ob.lead.contact}}</td>
+            <td>{{ob.lead.city}}</td>
+            <td>{{ob.lead.experience_years}}</td>
+            <td>{{ob.lead.salary}}</td>
+            <td>{{ob.lead.industry}}</td>
+            <td>{{ob.lead.product_name}}</td>
+			      <td>{{ob.lead.source.source_name}}</td>
+            <td>{{ob.lead.assign_date}}</td>
+			      <td>{{ob.lead.followup_time}}</td>            
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col_ctr">
+       <nav class="text-center">
+        <ul class= "pagination">            
+            <li>
+                {% if page.has_previous %}
+                    <a href="?page={{page.previous_page_number}}" aria-label="Previous"> 
+                    <span aria-hidden="true">Prev</span>
+                    </a>
+               {% endif %}
+            </li>
+                {% for p in paginator.page_range %}
+                    <li><a href="?page={{p}}">{{p}}</a></li>
+                {% endfor %}
+            <li>
+                {% if page.has_next %}
+                    <a href="?page={{page.next_page_number}}" aria-label="Next">
+                    <span aria-hidden="true">Next</span>
+                    </a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock mainbody %}
+
+{% block footer %}
+
+<footer class="padtb_30 footer">
+  <div class="container" >
+    <p>© 2015 Careerplus.shine.com All Rights Reserved.</p>
+  </div>
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+  </body>
+</html>
+{% endblock footer %}

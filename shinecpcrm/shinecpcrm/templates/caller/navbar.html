@@ -1,0 +1,82 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link href="{% static "css/bootstrap.min.css" %}"rel= "stylesheet">
+    <link href="{% static "css/style_page.css"%}" rel="stylesheet">
+    <link rel="icon" href="http://static1.shine.com/media/images/favicon.ico">
+    {%block title%}{%endblock title%}
+</head>
+
+<body onload="search_box.reset();">
+{%block header%}
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand sprite_call logo_inner" href="/home/"> </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse nav_style" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Leads <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/lead/">Today's Leads</a></li>
+            <li><a href="/follow-up-lead/">Follow Up Leads</a></li>
+            <li><a href="#">Pending Decision</a></li>
+            <li><a href="#">Price Denied Leads</a></li>
+            <li><a href="#">Callback/Try Again Leads</a></li>
+            <li><a href="/addlead/">Add Lead</a></li>
+          </ul>
+        </li>
+        
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboard <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">My Dashboard</a></li>
+          </ul>
+        </li>
+      
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Report <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">My Report</a></li>
+            <li><a href="#">Source-wise Report</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+      <form class="navbar-form navbar-left" role="search" action="/search/" method="get">
+        <div class="form-group">
+          <input type="text" name="search_box" id="search_box" class="form-control nav_search_input" placeholder="Search lead by contact no. or email ID">
+          <a href="/search/"> <span class="sprite_call btn_search"> </span> </a>
+        </div>
+      </form>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img src="../../static/images/image.gif"> {{user.first_name}} {{user.last_name}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/reset_password/">Change Password</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> <!--navbar end here-->
+{%endblock header%}
+</body>
+</html>

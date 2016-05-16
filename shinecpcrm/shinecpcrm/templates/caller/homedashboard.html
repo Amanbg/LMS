@@ -1,0 +1,105 @@
+{%load staticfiles%}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="{% static "css/bootstrap.min.css" %}" rel= "stylesheet">
+    <link href="{% static "css/style_page_teamlead.css" %}" rel="stylesheet">
+    <link rel="icon" href="http://static1.shine.com/media/images/favicon.ico">
+	<title>{%block title%}Home{%endblock title%}</title>
+
+</head>
+<body>
+	
+
+{%block mainbody%}
+	
+	<div class="container">
+  <div class="row"> 
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="login_inner_box bg_red">
+              <h2>{{lead}}</h2> 
+                <P> Today's Leads</P>
+                <span class="icon_tdy_lead sprite_call">  </span>
+                <span class="box_lead_ftr"> <a href="/lead/"> View Leads</a> <span class="glyphicon glyphicon-download icon_rotate"> </span> </span>
+              
+            </div>
+        </div>
+       
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="login_inner_box bg_lt_blue">
+              <h2>0</h2> 
+                <P>Pending Leads</P>
+                <span class="icon_pdy_lead sprite_call">  </span>
+                <span class="box_lead_ftr"> <a href="#"> View Leads</a> <span class="glyphicon glyphicon-download icon_rotate"> </span> </span>
+              
+            </div>
+        </div>
+        
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="login_inner_box bg_dark_yellow">
+              <h2>{{followuplead}}</h2> 
+                <P>Follow up Leads</P>
+                <span class="icon_flw_lead sprite_call">  </span>
+                <span class="box_lead_ftr"> <a href="/follow-up-lead/"> View Leads</a> <span class="glyphicon glyphicon-download icon_rotate"> </span> </span>
+              
+            </div>
+        </div>
+        
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="login_inner_box bg_green">
+              <h2>0</h2> 
+                <P> Pending Decision Leads</P>
+                <span class="icon_dec_lead sprite_call">  </span>
+                <span class="box_lead_ftr"> <a href="#"> View Leads</a> <span class="glyphicon glyphicon-download icon_rotate"> </span> </span>
+              
+            </div>
+        </div> 
+        
+    </div>
+    
+    <div class="row"> 
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="login_inner_box bg_chocolate">
+              <h2>0</h2> 
+                <P>No Denied Leads</P>
+                <span class="icon_denied sprite_call">  </span>
+                <span class="box_lead_ftr"> <a href="#"> View Leads</a> <span class="glyphicon glyphicon-download icon_rotate"> </span> </span>
+              
+            </div>
+        </div>
+        
+        
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="login_inner_box bg_velvet">
+              <h4>Add Lead</h4> 
+                <span class="icon_add_lead sprite_call">  </span>
+                <span class="box_lead_ftr"> <a href="/addlead/"> Add Leads</a> <span class="glyphicon glyphicon-download icon_rotate"> </span> </span>
+              
+            </div>
+        </div>
+            
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="login_inner_box bg_blue">
+              <h4>MY Dashboard</h4> 
+                <span class="icon_dash_lead sprite_call">  </span>
+                <span class="box_lead_ftr"> <a href="#"> View Dashboard</a> <span class="glyphicon glyphicon-download icon_rotate"> </span> </span>
+              
+            </div>
+        </div>
+        
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="login_inner_box bg_dark_grey">
+              <h4>Reports</h4> 
+                <span class="icon_report sprite_call">  </span>
+                <span class="box_lead_ftr"> <a href="#"> View Reports</a> <span class="glyphicon glyphicon-download icon_rotate"> </span> </span>
+              
+            </div>
+        </div> <!--col end here-->
+    </div> <!--row end here-->
+</div> <!--container end here-->
+
+
+{%endblock mainbody%}
+</body>
+</html>

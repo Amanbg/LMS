@@ -1,0 +1,108 @@
+
+{%load staticfiles%}
+{% if teamlead %}
+  {%include "TeamLeader/navbar.html"%}
+{% else %}
+  {%include "caller/navbar.html"%}
+{%endif%}
+
+{%block mainbody%}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<div class="container"> 
+	<div class="row">
+		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col_ctr leads_col">
+
+		<div class="col-md-4 col-xs-12 no_pad"><h4><b>Personal Details</b></h4></div>
+		<!--<div class="col-md-4 col-xs-12 text-center"> <h5>Profile View <strong>1</strong></h5></div>
+		<div class="col-md-4 col-xs-12 text-right"> <h5> Page Rank <strong>2</strong></h5></div>-->
+
+	<table class="table" style="border:1px solid #dddddd">
+         <tbody>
+        
+        <tr>
+        
+         <td class="warning"><b>Name</b></td>
+          <td class="danger">{{object.name}}</td>
+          <td class="warning"><b>Email ID</b></td>
+          <td class="danger">{{object.email_id}}</td>
+          <td class="danger"></td>
+          <td class="danger"></td>
+        </tr>
+
+        <tr>
+          <td class="warning"><b>Mobile NO.</b></td>
+          <td class="danger">{{object.contact}}</td>
+
+
+          <td class="warning"><b>City</b></td>
+          <td class="danger">{{object.city}}</td>
+           <td class="danger"></td>
+          <td class="danger"></td>
+        </tr>
+
+        <tr>
+          <td class="warning"><b>Exp. Years</b></td>
+          <td class="danger">{{object.experience_years}}</td>
+
+          <td class="warning"><b>Job</b></td>
+          <td class="danger">Web Designer</td>
+          <td class="danger"></td>
+          <td class="danger"></td>
+        </tr>
+       
+        <tr>
+          <td class="warning"><b>Industry</b></td>
+          <td class="danger">{{object.industry}}</td>
+          <td class="warning"><b>Company</b></td>
+          <td class="danger">HT Media</td>
+          <td class="danger"></td>
+          <td class="danger"></td>
+          
+        </tr>
+
+	     	
+        <form id="getleaddetails" action="" method="post">{%csrf_token%}
+       
+          <tr>
+            <td><h4><b>Comments</b></h4></td>    
+          </tr>
+           {{form.as_table}}
+           
+         </tbody>
+          
+  </table>
+      <h4>Feedback</h4>
+      <h5> {% if comment %}{{comment}} -  <b>{{user1}}</b>{% endif %}</h5>
+    
+          <div align="center" style="display: block; float: left; width: 100%;"> 
+          <button type="submit" class="btn btn_submit pull-right">Update</button>
+          </form>
+        </div>
+        
+        <div class="clearfix"> </div>
+    
+    </div>
+    </div>
+</div>
+      
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script type="jquery.ui.datepicker.js"></script>
+      <script src="{% static "js/bootstrap-datepicker.js" %}"></script>
+
+{%endblock mainbody%}
+{%block footer%}
+
+<footer class="padtb_30 footer_inner">
+  <div class="container" >
+    <p>© 2015 Careerplus.shine.com All Rights Reserved.</p>
+  </div>
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    
+    {%endblock footer%}

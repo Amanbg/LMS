@@ -1,0 +1,25 @@
+
+
+{%extends "caller/base.html"%}
+{% load staticfiles %}
+{%block title%}Add Lead{%endblock title%}
+{%block mainbody%}
+
+<div class="container">     
+
+  <div class="row"> 
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-10 col_ctr padtb_30"> 
+     <h4 class="padb_30">Add Lead</h4>
+      <div class="boundary">
+
+      <form id="addlead" action ="/addlead/" method="post" class="lead-form"> {% csrf_token %}  
+           {{form.as_p}}
+            <button type="submit" class="btn btn_submit pull-right">Submit</button>
+       </form>
+        </div>
+        
+  	 </div>
+	</div>
+</div> <!--container fluid end here--> 	
+
+{%endblock mainbody%}
